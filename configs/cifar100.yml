@@ -1,0 +1,29 @@
+model:
+    fe:
+        arch: resnet32
+    cls:
+        arch: hiernet
+        feat_size: 64
+    pivot:
+        arch: pivot
+        dropout_rate: 0.1
+data:
+    data_path: prepro/data/cifar100
+training:
+    lmbda: 1
+    loss:
+        name: cross_entropy
+    epoch: 200
+    n_workers: 2
+    batch_size: 128
+    save_interval: 10
+    print_interval: 1
+    optimizer_main:
+        name: sgd
+        lr: 0.02
+        momentum: 0.9
+        weight_decay: 0.0005
+    resume:
+        model:
+        param_only: true
+exp: deep-rtc

@@ -1,0 +1,35 @@
+model:
+    fe:
+        arch: resnet50
+        #arch: resnet18  # inat_sub
+        pretrained: true
+    cls:
+        arch: hiernet
+        feat_size: 2048
+        #feat_size: 512  # inat_sub
+    pivot:
+        arch: pivot
+        dropout_rate: 0.2
+data:
+    data_path: prepro/data/inaturalist
+training:
+    lmbda: 0.5
+    loss:
+        name: cross_entropy
+    epoch: 200
+    n_workers: 4
+    batch_size: 128
+    save_interval: 10
+    print_interval: 1
+    optimizer_main:
+        name: sgd
+        lr: 0.01
+        momentum: 0.9
+        weight_decay: 0.0001
+    scheduler:
+        step_size: 100
+        gamma: 0.1
+    resume:
+        model:
+        param_only: true
+exp: deep-rtc

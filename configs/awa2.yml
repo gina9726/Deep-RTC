@@ -1,0 +1,33 @@
+model:
+    fe:
+        arch: resnet18
+        pretrained: true
+    cls:
+        arch: hiernet
+        feat_size: 512
+    pivot:
+        arch: pivot
+        dropout_rate: 0.1
+data:
+    data_path: prepro/data/awa2
+training:
+    lmbda: 0.5
+    loss:
+        name: cross_entropy
+    epoch: 120
+    n_workers: 2
+    batch_size: 128
+    save_interval: 10
+    print_interval: 1
+    optimizer_main:
+        name: sgd
+        lr: 0.01
+        momentum: 0.9
+        weight_decay: 0.0003
+    scheduler:
+        step_size: 40
+        gamma: 0.1
+    resume:
+        model:
+        param_only: true
+exp: deep-rtc
