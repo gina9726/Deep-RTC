@@ -23,7 +23,7 @@ This repository contains the source code accompanying our ECCV 2020 paper.
 # Data preparation
 - CIFAR100 
 [[Raw images]](https://www.cs.toronto.edu/~kriz/cifar.html)
-[[Long-tail version]](https://github.com/richardaecn/class-balanced-loss)
+[[Long-tail version]](https://drive.google.com/file/d/1TVq71GVHY_BjnDCOw9Z6P8vM7fyvXNJ-/view?usp=sharing)
 - AWA2
 [[Raw images]](https://cvml.ist.ac.at/AwA2/)
 - ImageNet
