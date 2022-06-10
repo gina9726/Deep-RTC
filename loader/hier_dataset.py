@@ -75,8 +75,8 @@ def hierdata(splits, **kwargs):
         print("{split}: {size}".format(split=split, size=len(dataset)))
         logger.info("{split}: {size}".format(split=split, size=len(dataset)))
 
-    data_loader['nodes'] = np.load(os.path.join(data_path, 'used_nodes.npy')).tolist()
-    data_loader['node_labels'] = np.load(os.path.join(data_path, 'node_labels.npy')).tolist()
+    data_loader['nodes'] = np.load(os.path.join(data_path, 'leaf_nodes.npy')).tolist()
+    data_loader['node_labels'] = np.load(os.path.join(data_path, 'tree.npy')).tolist()
     print("Building data loader with {} workers".format(num_workers))
     logger.info("Building data loader with {} workers".format(num_workers))
 
@@ -120,8 +120,8 @@ def hierdata_cifar(splits, **kwargs):
         print("{split}: {size}".format(split=split, size=len(dataset)))
         logger.info("{split}: {size}".format(split=split, size=len(dataset)))
 
-    data_loader['nodes'] = np.load(os.path.join(data_path, 'used_nodes.npy')).tolist()
-    data_loader['node_labels'] = np.load(os.path.join(data_path, 'node_labels.npy')).tolist()
+    data_loader['nodes'] = np.load(os.path.join(data_path, 'leaf_nodes.npy')).tolist()
+    data_loader['node_labels'] = np.load(os.path.join(data_path, 'tree.npy')).tolist()
     print("Building data loader with {} workers".format(num_workers))
     logger.info("Building data loader with {} workers".format(num_workers))
 
